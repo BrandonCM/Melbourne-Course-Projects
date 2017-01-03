@@ -1,0 +1,15 @@
+The needleMan algorithm used is the one on the lecture slides, but translated into python.
+
+PolishData() gets rid of hyperlinks, usernames, and hashtags.
+
+Most of the work is done inside the function findClosestMatch(). It takes a tweet that's been
+"polished", tokenizes it and begins checking each word against each entry in the gazetteer.
+It'll store the location with that returns the best GED score inside a dictionary called 
+bestMatch. I used a dictionary so that I could link every location to its score and have it print 
+out cleanly. 
+
+Multi-Word locations were compared using 2 indexes. One pointed to the current tweet word
+and if the first words returned a GED score greater than or equal to -2, it would use the 
+second index to look at the subsequent words. 
+
+All the results are written to a .txt file so that I may go back and look at the results anytime.
